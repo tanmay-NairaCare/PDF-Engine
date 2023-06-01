@@ -6,6 +6,10 @@ import time
 # Code for uploading the PDF/image file
 st.title("Welcome to Naira HealthCare ")
 def upload_file():
+    temp_folder = "temp"
+    # Check if the "temp" folder exists, and create it if it doesn't
+    if not os.path.exists(temp_folder):
+        os.makedirs(temp_folder)
     uploaded_file = st.file_uploader("Choose a file", type=["pdf", "jpg", "png"])
     if uploaded_file is not None:
         # Save the uploaded file to a temporary directory
