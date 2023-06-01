@@ -17,7 +17,8 @@ def get_table_csv_results2(file_name,file_prefix,option):
         print('Image loaded', file_name)
 
     # Amazon Textract client
-    session = boto3.Session()
+    region = 'us-east-1'
+    session = boto3.Session(region_name=region)
     client = session.client('textract')
     response = client.analyze_document(Document={'Bytes': bytes_test}, FeatureTypes=['TABLES','FORMS'])
     #getting the raw text data
