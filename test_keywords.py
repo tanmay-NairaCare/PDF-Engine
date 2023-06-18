@@ -190,13 +190,17 @@ def tata1mg_test_names():
     'T4, Total',
     'T4 Total',
     'Thyroid Stimulating Hormone - Ultra Sensitive',
-    'Thyroid Stimulating Hormone Ultra Sensitive'
+    'Thyroid Stimulating Hormone Ultra Sensitive',
+    'Thyroid Stimulating Hormone',
+    'Thyroid Stimulating Hormone - Ultra'
     ]
     return test_names
 
 def metropolis_keywords():
     test_names=[
+    'Bilirubin',
     'Haemoglobin (Hb)',
+    'Haemoglobin (Hb)*',
     'Absolute Basophil Count',
     'MPV (Mean Platelet Volume)',
     'HbA1C- Glycated Haemoglobin',
@@ -251,7 +255,7 @@ def metropolis_keywords():
     'Potassium',
     'Chlorides',
     'Cholesterol-Total',
-    'Cholesterol Total'
+    'Cholesterol Total',
     'Triglycerides level',
     'HDL Cholesterol',
     'VLDL Cholesterol',
@@ -261,8 +265,14 @@ def metropolis_keywords():
     'Calcium',
     'Phosphorous',
     'Bilirubin-Total',
+    'Bilirubin- Total',
+    'Bilirubin-Total ',
     'Bilirubin-Direct',
+    'Bilirubin-Direct ',
+    'Bilirubin- Direct',
+    'Bilirubin-Indirect',
     'Bilirubin- Indirect',
+    'Bilirubin- Indirect ',
     'ESR - Erythrocyte Sedimentation Rate',
     'Vitamin B12 level',
     'Free T4',
@@ -279,7 +289,7 @@ def metropolis_keywords():
     'Urine Ketones (Acetone)',
     'Urine Glucose (sugar)',
     'Urobilinogen',
-    'Bilirubin',
+    #'Bilirubin',
     'Nitrite',
     'Red blood cells',
     'Pus cells (WBCs)',
@@ -361,7 +371,6 @@ def trutest_keywords():
     'Uric Acid*'
     ]
     return test_names
-
 
 def nm_medical_keywords():
     test_names=['Lymphocytes EDTA Whole Blood',

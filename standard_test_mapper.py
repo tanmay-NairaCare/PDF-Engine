@@ -32,6 +32,7 @@ class Mapper():
                 'Urea/Creatinine Ratio': 'Urea/Creatinine Ratio',
                 'Urea/Creatinine Ratio ': 'Urea/Creatinine Ratio',
                 'BUN/Creatinine Ratio': 'Blood Urea Nitrogen/Creatinine Ratio',
+                'Urea/Creatinine Ratio ((calculated))' : 'Urea/Creatinine Ratio',
                 'Volume*': 'Volume',
                 'Volume': 'Volume',
                 'Colour*': 'Colour (Urine)',
@@ -111,11 +112,14 @@ class Mapper():
             }
         elif test_center.lower()=='pharmeasy':
             standardized_names = {
+                'TOTAL LEUCOCYTES COUNT (WBC) NEUTROPHILS' : 'W.B.C. Count',
                 'Lipoprotein (a) [Lp(a)]' : 'Lipoprotein',
                 'HIGH SENSITIVITY C-REACTIVE PROTEIN (HS-CRP)':'HS-CRP',
                 'APOLIPOPROTEIN - A1 (APO-A1)':'APOLIPOPROTEIN - A1',
                 'APOLIPOPROTEIN - B (APO-B)' : 'APOLIPOPROTEIN - B',
                 'APO A1 RATIO (APO B/A1)': 'APO B/A1',
+                'APO B / APO A1 RATIO (APO B/A1)':'APO B/A1',
+                'APO B  APO A1 RATIO (APO B/A1)':'APO B/A1',
                 'APOLIPOPROTEIN - A1 (APO-A1) ':'APOLIPOPROTEIN - A1',
                 'APOLIPOPROTEIN - B (APO-B) ' : 'APOLIPOPROTEIN - B',
                 'APO A1 RATIO (APO B/A1) ': 'APO B/A1',
@@ -124,11 +128,14 @@ class Mapper():
                 'POTASSIUM': 'Potassium',
                 'CHLORIDE': 'Chlorides',
                 '25-OH VITAMIN D (TOTAL)': 'Vitamin D',#New
+                '25-OH VITAMIN D(TOTAL)': 'Vitamin D',#New
                 'VITAMIN B-12': 'Vitamin B-12',#New
+                'VITAMIN B 12': 'Vitamin B-12',#New
                 'IRON': 'Iron',#New
                 'TOTAL IRON BINDING CAPACITY (TIBC)': 'TIBC',#New
                 '% TRANSFERRIN SATURATION': 'Transferrin Saturation',#New
                 'UNSAT.IRON-BINDING CAPACITY(UIBC)': 'UIBC',#New
+                'UNSAT.IRON-BINDING CAPACITY (UIBC)': 'UIBC',#New
                 'TOTAL CHOLESTEROL': 'Total Cholesterol',
                 'HDL CHOLESTEROL DIRECT': 'HDL Cholesterol',
                 'HDL CHOLESTEROL - DIRECT': 'HDL Cholesterol',
@@ -176,6 +183,7 @@ class Mapper():
                 'CALCIUM ':'Calcium',
                 'URIC ACID': 'Uric Acid',
                 'EST. GLOMERULAR FILTRATION RATE (eGFR)': 'eGFR',#New
+                'EST. GLOMERULAR FILTRATION RATE (eGFR) Reference Range :-':'eGFR',
                 'VOLUME': 'Volume',
                 'COLOUR': 'Colour (Urine)',
                 'APPEARANCE': 'Appearance (Urine)',
@@ -184,7 +192,7 @@ class Mapper():
                 'URINARY PROTEIN': 'Protein (Urine)',
                 'URINARY GLUCOSE': 'Glucose (Urine)',
                 'URINE KETONE': 'Ketones (Urine)',
-                'URINARY BILIRUBIN': 'Bilirubin',#New #Doubt
+                'URINARY BILIRUBIN': 'Bilirubin (Urine)',#New #Doubt
                 'UROBILINOGEN': 'Urobilinogen (Urine)',
                 'BILE SALT': 'Bile Salt (Urine)',
                 'BILE PIGMENT': 'Bile Pigment (Urine)',
@@ -232,12 +240,16 @@ class Mapper():
                 'HEMATOCRIT(PC':'PCV',
                 'MEAN CORPUSCULAR VOLUME(MCV)': 'MCV',
                 'MEAN CORPUSCULAR HEMOGLOBIN(MCH)': 'MCH',
+                'MEAN CORPUSCULAR HEMOGLOBIN(MCH': 'MCH',
                 'MEAN CORP.HEMO.CONC(MCHC)': 'MCHC',
+                'MEAN CORP.HEMO.CONC(MCHC': 'MCHC',
                 'RED CELL DISTRIBUTION WIDTH SD(RDW-SD)': 'RDW-SD',#New #Doubt
                 'RED CELL DISTRIBUTION WIDTH (RDW-CV)': 'RDW-CV',#New #Doubt
                 'RED CELL DISTRIBUTION WIDTH - SD(RDW-SD)' :'RDW-SD',
                 'PLATELET DISTRIBUTION WIDTH(PDW)': 'PDW',#New
                 'MEAN PLATELET VOLUME(MPV)': 'Mean Platelet Volume',
+                'MEAN PLATELET VOLUME(M': 'Mean Platelet Volume',
+                'MEAN PLATELET VOLUME(M ': 'Mean Platelet Volume',
                 'PLATELET COUNT': 'Platelet Count',
                 'PLATELET TO LARGE CELL RATIO(PLCR)': 'PLCR', #New
                 'PLATELETCRIT(PCT)': 'PCT' #New
@@ -269,6 +281,7 @@ class Mapper():
                 'PDW': 'PDW', #NEW
                 'Cholesterol - Total ': 'Total Cholesterol',
                 'Cholesterol- Total': 'Total Cholesterol',
+                'Cholesterol - Total' : 'Total Cholesterol',
                 'Cholesterol Total': 'Total Cholesterol',
                 'Uric Acid': 'Uric Acid',
                 'Blood Urea Nitrogen': 'Blood Urea Nitrogen',
@@ -313,12 +326,28 @@ class Mapper():
                 'T4, Total': 'T4 (Thyroxine)',
                 'T4 Total': 'T4 (Thyroxine)',
                 'Thyroid Stimulating Hormone - Ultra Sensitive':'TSH',
-                'Thyroid Stimulating Hormone Ultra Sensitive':'TSH'
+                'Thyroid Stimulating Hormone Ultra Sensitive':'TSH',
+                'Thyroid Stimulating Hormone': 'TSH'
             }
         elif test_center.lower()=='metropolis':
             standardized_names = {
             'TruHealth Youth ESR - Erythrocyte Sedimentation Rate (EDTA Whole Blood)':'ESR',
             'Haemoglobin (Hb)': 'Haemoglobin',
+            'Haemoglobin (Hb)*': 'Haemoglobin',
+            'Albumin Serum,Bromocresol green)' : 'Albumin',
+            'Total Protein (Serum,Bluret)' : 'Total Proteins',
+            'Alkaline Phosphatase (Serum,pNPP)' : 'Alkaline Phosphatase',
+            'Bilirubin-Indirect (Serum,Calculated) ' : 'Bilirubin (Indirect)',
+            'SGOT (AST) (Serum,Enzymatic)' : 'SGOT',
+            'SGPT (ALT) (Serum,Enzymatic)' :'SGPT',
+            'SGOT (AST)' : 'SGOT',
+            'SGPT (ALT)' :'SGPT',
+            'SGOT (AST) ' : 'SGOT',
+            'SGPT (ALT) ' :'SGPT',
+            'Creatinine (Serum,Jaffe)' : 'Creatinine',
+            '(Serum,ISE) Potassium' : 'Potassium',
+            '(Serum,ISE) Chlorides': 'Chlorides',
+            '(Serum,Enzymatic) Cholesterol-Total' : 'Total Cholesterol',
             'Absolute Basophil Count': 'Absolute Basophil Count',
             'MPV (Mean Platelet Volume)': 'Mean Platelet Volume',
             'HbA1C- Glycated Haemoglobin': 'HbA1c',
@@ -386,10 +415,14 @@ class Mapper():
             'Bilirubin-Total': 'Bilirubin (Total)',
             'Bilirubin-Direct': 'Bilirubin (Direct)',
             'Bilirubin- Indirect': 'Bilirubin (Indirect)',
+            'Bilirubin- Indirect (Serum,Calculated) ':'Bilirubin (Indirect)',
+            'Bilirubin- Indirect (Serum,Calculated)':'Bilirubin (Indirect)',
             'Vitamin B12 level': 'Vitamin B-12',
             'Free T4': 'T4 (Thyroxine)',
             'Free T3': 'T3 (Tri-iodothyronine)',
             'Free, T3': 'T3 (Tri-iodothyronine)',
+            'HbA1C- Glycated Haemoglobin (HPLC)'  :'HbA1c',
+            'HbA1C- Glycated Haemoglobin (HPLC'  :'HbA1c',
             'Estimated Average Glucose (eAG)': 'Estimated Average Glucose (eAG)',
             'Colour': 'Colour (Urine)',
             'Transparency (Appearance)': 'Appearance (Urine)',
@@ -400,7 +433,8 @@ class Mapper():
             'Urine Ketones (Acetone)': 'Ketones (Urine)',
             'Urine Glucose (sugar)': 'Glucose (Urine)',
             'Urobilinogen': 'Urobilinogen (Urine)',
-            'Bilirubin': 'Bilirubin', #Doubt Is it Total Bilirubin?
+            'Bilirubin ': 'Bilirubin (Urine)', #Doubt Is it Total Bilirubin?
+            'Bilirubin': 'Bilirubin (Urine)',
             'Nitrite': 'Nitrite (Urine)',
             'Red blood cells': 'Red Blood Cells (Urine)',
             'Pus cells (WBCs)': 'Pus Cells (Urine)',

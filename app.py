@@ -2,7 +2,7 @@ import streamlit as st
 from extract_from_textract2 import *
 import pandas as pd
 import time
-
+import os
 # Code for uploading the PDF/image file
 st.title("Welcome to Naira HealthCare ")
 def upload_file():
@@ -37,18 +37,19 @@ def main(file_path):
     print(table_csv_file)
     end_time = time.time()
     elapsed_time = round(end_time - start_time, 2)
-    #st.write("Time elapsed: ", elapsed_time, "seconds")
-    if table_csv_file==None:
-        st.write("No meaningful data present.")
+    st.write("Time elapsed: ", elapsed_time, "seconds")
+    if table_csv_file==None or table_csv_file==[]:
+        st.write("No meaningful data present. Please try again!")
     else:
-        if os.stat(table_csv_file).st_size == 0:
-            st.write("File is empty!")
+        if os.stat(table_csv_file).st_size == 0 or not os.path.exists(table_csv_file):
+            st.write("File is empty! No meaningful data present.")
         else:
             df = pd.read_csv(table_csv_file)
+            num_rows = df.shape[0]
+            #print("Number of tests captured:", num_rows)
+            st.write("Number of tests captured:", num_rows)
             st.write(df)
 
 # If a file is uploaded, call the main function to process the file
 if file_path is not None:
     main(file_path)
-
-
